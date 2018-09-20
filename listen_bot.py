@@ -2,6 +2,7 @@
 
 import telepot
 import time
+import os
 from telepot.loop import MessageLoop
 
 def handle(msg):
@@ -44,7 +45,7 @@ def handle(msg):
 		bot.sendMessage(chat_id,"Record creato") #conferma
     
 #Bot Token
-bot = telepot.Bot('TOKEN')
+bot = telepot.Bot(os.environ['API-TOKEN'])
 me=bot.getMe()
 print "Avvio bot in corso..."
 print me
