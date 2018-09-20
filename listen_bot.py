@@ -45,7 +45,7 @@ def handle(msg):
 		bot.sendMessage(chat_id,"Record creato") #conferma
     
 #Bot Token
-bot = telepot.Bot(os.environ['API-TOKEN'])
+bot = telepot.Bot('566951999:AAHObY7rgnQcwDAUnRdtxMMw9MPfFgGKG7s')
 me=bot.getMe()
 print "Avvio bot in corso..."
 print me
