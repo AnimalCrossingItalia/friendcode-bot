@@ -1,8 +1,6 @@
 #!/usr/bin/python2.7
 
-#telepot
 import telepot
-#loop
 import time
 from telepot.loop import MessageLoop
 
@@ -22,20 +20,22 @@ def handle(msg):
 	#comandi
 	if command == '/ping':
 		bot.sendMessage(chat_id, "pong!")
+	
+	elif command == '/chatid':
+		bot.sendMessage(chat_id, chat_id)
   	
 	elif command.startswith('/query'):
 		args = command.split(' ')
 		#inserire comando per query, usare "args[1]" come parametro
 		#gestire eccezione per record non trovato
 		output = ' ' #inserire il risultato della query in "output"
-		bot.sendMessage(chat_id,output) #stampa parametro
+		bot.sendMessage(chat_id,output) #stampa output
 	
 	elif command.startswith('/insert'):
 		args = command.split(' ')
 		#inserire comando per insert, usare "args[1]" come parametro
 		#gestire eccezione per record non trovato
 		bot.sendMessage(chat_id,'Record eliminato') #conferma
-		
 		
 	elif command.startswith('/delete'): 
 		args = command.split(' ')
