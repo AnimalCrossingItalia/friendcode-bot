@@ -1,1 +1,1 @@
-# Friendcode-bot
+# friendcode-bot
