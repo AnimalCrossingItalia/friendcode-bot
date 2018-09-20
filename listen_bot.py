@@ -12,7 +12,7 @@ def handle(msg):
 	command = msg['text']
 
 	#permessi di utilizzo
-  #if msg['from']['id'] != USER_ID:
+  	#if msg['from']['id'] != USER_ID:
 	if false: 
         	bot.sendMessage(chat_id, "Mi dispiace! Questo e un bot privato! Accesso negato!")
         	exit(1)
@@ -23,8 +23,8 @@ def handle(msg):
 	#comandi
 	if command == '/ping':
 		bot.sendMessage(chat_id, "pong!")
-  elif command == '/list':
-    bot.sendMessage(chat_id, "lista")
+  	elif command == '/list':
+    		bot.sendMessage(chat_id, "lista")
     
 #Bot Token
 bot = telepot.Bot('TOKEN')
