@@ -1,14 +1,14 @@
 #!/usr/bin/python2.7
 
-import telepot
-import time
+import os
 import sys
+import time
 
+import telepot
 from telepot.loop import MessageLoop
 
 from Modules.DataManager import DataManager
 
-def
 
 def handle(msg):
     # set-up variabili
@@ -32,25 +32,31 @@ def handle(msg):
 
     elif command.startswith('/query'):
         args = command.split(' ')
-        # inserire comando per query, usare "args[1]" come parametro
-        # gestire eccezione per record non trovato
-        output = ' '  # inserire il risultato della query in "output"
-        bot.sendMessage(chat_id, output)  # stampa output
+        output = data.displayperson(chat_id, args[1])
+        if len(output) == 0:
+            bot.sendMessage(chat_id, "")
+        else:
+            msg = args[1] + "\n\n"
+            for row in output:
+                msg += row[0] + " " + row[1]
+            bot.sendMessage(chat_id, msg)  # stampa output
 
     elif command.startswith('/delete'):
         args = command.split(' ')
-        # inserire comando per insert, usare "args[1]" come parametro
-        # gestire eccezione per record non trovato
-        bot.sendMessage(chat_id, 'Record eliminato')  # conferma
+        removed = data.removecode(chat_id, args[1], args[2])
+        if removed == 0:
+            bot.sendMessage(chat_id, 'Record non trovato')  # conferma
+        else:
+            bot.sendMessage(chat_id, 'Record eliminato')  # conferma
 
     elif command.startswith('/insert'):
         args = command.split(' ')
-        # inserire comando per delete, usare "args[1]" come parametro
-        # gestire eccezione per record gia esistente
+        data.addcode(chat_id, args[1], args[2], args[3])
+        # TODO: gestire eccezione per record gia esistente
         bot.sendMessage(chat_id, "Record creato")  # conferma
 
 
-data = DataManager(sys.argv[2], sys.argv[3], sys.argv[4]. sys.argv[5])
+data = DataManager(os.environ['DATABASE_URL'])
 bot = telepot.Bot(sys.argv[1])
 me = bot.getMe()
 print("Avvio bot in corso...")

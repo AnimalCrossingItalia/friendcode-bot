@@ -1,1 +1,10 @@
-telepot == 12.7
+aiohttp==3.4.4
+async-timeout==3.0.0
+attrs==18.2.0
+chardet==3.0.4
+idna==2.7
+multidict==4.4.2
+psycopg2==2.7.5
+telepot==12.7
+urllib3==1.23
+yarl==1.2.6
