@@ -42,39 +42,39 @@ def handle(msg):
     # display information about the programs
     elif command.startswith( '/about' ):
         bot.sendMessage( chat_id, """Friend Code Bot
-        versione 1.0 (build 22/09/2018)
+    versione 1.0 (build 22/09/2018)
         
-        creato e mantenuto da:
-        Emiliano Sandri (www.emilianosandri.it)
-        Stefano Di Pasquale (http://www.stefaniscion.altervista.org/)
+    creato e mantenuto da:
+    Emiliano Sandri (www.emilianosandri.it)
+    Stefano Di Pasquale (http://www.stefaniscion.altervista.org/)
         
-        il codice sorgente del bot è disponibile su:
-        https://github.com/Stefaniscion/friendcode-bot""" )
+    il codice sorgente del bot è disponibile su:
+    https://github.com/Stefaniscion/friendcode-bot""" )
 
     # display the bot commands explanations
     elif command.startswith( '/man' ):
         bot.sendMessage( chat_id, """Friend Code Bot
-        Questo bot permette di memorizzare i codici amico del gruppo.
+    Questo bot permette di memorizzare i codici amico del gruppo.
         
-        COMANDI:
-        Inserire nuovi codici (solo amministratori):
-        \\insert  [nome]  [etichetta]  [codice amico]
+    COMANDI:
+    Inserire nuovi codici (solo amministratori):
+    \\insert  [nome]  [etichetta]  [codice amico]
         
-        Eliminare un codice (solo amministratori):
-        \\delete  [nome]  [etichetta]
+    Eliminare un codice (solo amministratori):
+    \\delete  [nome]  [etichetta]
         
-        Richiamare i codici associati ad una persona:
-        \\query  [nome]
+    Richiamare i codici associati ad una persona:
+    \\query  [nome]
         
-        Vedere tutti i codici del gruppo:
-        \\listall
+    Vedere tutti i codici del gruppo:
+    \\listall
         
-        Nota: tutti i parametri dei comandi vanno separati con due spazi
+    Nota: tutti i parametri dei comandi vanno separati con due spazi
         
-        SIGNIFICATO PARAMETRI:
-        nome -> il nome della persona a cui è associato il codice (es. "Mario", "Paolo R")
-        etichetta -> la descrizione del codice (es. "Switch", "3DS", "Wii U", "3DS EU", "3DS JAP")
-        codice -> il codice amico da memorizzare (es. "1234-5678-9012")
+    SIGNIFICATO PARAMETRI:
+    nome -> il nome della persona a cui è associato il codice (es. "Mario", "Paolo R")
+    etichetta -> la descrizione del codice (es. "Switch", "3DS", "Wii U", "3DS EU", "3DS JAP")
+    codice -> il codice amico da memorizzare (es. "1234-5678-9012")
         """ )
 
     # given a name get all his friend codes
