@@ -58,16 +58,16 @@ def handle(msg):
         
     COMANDI:
     Inserire nuovi codici (solo amministratori):
-    \\insert  [nome]  [etichetta]  [codice amico]
+    /insert  [nome]  [etichetta]  [codice amico]
         
     Eliminare un codice (solo amministratori):
-    \\delete  [nome]  [etichetta]
+    /delete  [nome]  [etichetta]
         
     Richiamare i codici associati ad una persona:
-    \\query  [nome]
+    /query  [nome]
         
     Vedere tutti i codici del gruppo:
-    \\listall
+    /listall
         
     Nota: tutti i parametri dei comandi vanno separati con due spazi
         
@@ -103,7 +103,7 @@ def handle(msg):
                         msg += row[0] + " " + row[1] + "\n"
                     bot.sendMessage( chat_id, msg )  # print output
         else:  # if the user gives the command in a bad format display explanation
-            bot.sendMessage( chat_id, "Utilizzo comando: \\query  [nome]" )
+            bot.sendMessage( chat_id, "Utilizzo comando: /query  [nome]" )
 
     # list all codes of the group
     elif command.startswith( '/listall' ):
@@ -137,7 +137,7 @@ def handle(msg):
                                      )  # system error
             else:
                 bot.sendMessage(
-                    chat_id, "Utilizzo comando: \\delete  [nome]  [etichetta]" )
+                    chat_id, "Utilizzo comando: /delete  [nome]  [etichetta]" )
         else:
             bot.sendMessage(
                 chat_id,
@@ -162,7 +162,7 @@ def handle(msg):
             else:
                 bot.sendMessage(
                     chat_id,
-                    "Utilizzo comando: \\insert  [nome]  [etichetta]  [codice amico]"
+                    "Utilizzo comando: /insert  [nome]  [etichetta]  [codice amico]"
                 )
         else:
             bot.sendMessage(
