@@ -144,7 +144,7 @@ codice -> il codice amico da memorizzare (es. "1234-5678-9012")
                 "Questo comando può essere usato solo dagli amministratori del gruppo"
             )
 
-    elif command.startswith( '/add' ) or command.startswith( '/insert' ):  # insert new code
+    elif command.startswith( '/ins' ) or command.startswith( '/insert' ):  # insert new code
         if is_admin:  # check if admin
             args = command.split( '  ' )
             if len( args ) == 4:
