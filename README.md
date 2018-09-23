@@ -10,7 +10,10 @@ funzionalità.
 
 # Changelog
 
-- Versione 1.0
+- Versione 1.0.1 (23/09/2018)
+    - Introdotti degli alias più intuitivi per i comandi
+
+- Versione 1.0.0 (22/09/2018)
     - Prima release pubblica
     - Introdotti i comandi principali (/insert, /delete, /query, /listall, /man, /about)
     - Introdotta la richiesta di privilegi di amministrazione sul gruppo per comandi che alterano il database

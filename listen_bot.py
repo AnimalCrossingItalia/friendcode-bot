@@ -42,7 +42,7 @@ def handle(msg):
     # display information about the programs
     elif command.startswith( '/about' ):
         bot.sendMessage( chat_id, """Friend Code Bot
-versione 1.0 (build 22/09/2018)
+versione 1.0.1 (build 23/09/2018)
         
 creato e mantenuto da:
 Emiliano Sandri (www.emilianosandri.it)
@@ -52,7 +52,7 @@ il codice sorgente del bot è disponibile su:
 https://github.com/Stefaniscion/friendcode-bot""" )
 
     # display the bot commands explanations
-    elif command.startswith( '/man' ):
+    elif command.startswith( '/help' ) or command.startswith( '/man' ):
         bot.sendMessage( chat_id, """Friend Code Bot
 Questo bot permette di memorizzare i codici amico del gruppo.
         
@@ -78,7 +78,7 @@ codice -> il codice amico da memorizzare (es. "1234-5678-9012")
         """ )
 
     # given a name get all his friend codes
-    elif command.startswith('/query'):
+    elif command.startswith( '/find' ) or command.startswith( '/query' ):
         args = command.split(
             '  ' )  # split the message text in an array made by command + args
         if len(
@@ -106,7 +106,7 @@ codice -> il codice amico da memorizzare (es. "1234-5678-9012")
             bot.sendMessage( chat_id, "Utilizzo comando: /query  [nome]" )
 
     # list all codes of the group
-    elif command.startswith( '/listall' ):
+    elif command.startswith( '/list' ) or command.startswith( '/listall' ):
         user_codes = data.listall(
             chat_id )  # ask all codes of the current group
         output = "Lista dei codici amico del gruppo\n\n"
@@ -118,7 +118,7 @@ codice -> il codice amico da memorizzare (es. "1234-5678-9012")
         bot.sendMessage( chat_id, output )
 
     # delete a code
-    elif command.startswith('/delete'):
+    elif command.startswith( '/del' ) or command.startswith( '/delete' ):
         if is_admin:  # check if user is admin
             args = command.split( '  ' )
             if len( args ) == 3:
@@ -144,7 +144,7 @@ codice -> il codice amico da memorizzare (es. "1234-5678-9012")
                 "Questo comando può essere usato solo dagli amministratori del gruppo"
             )
 
-    elif command.startswith( '/insert' ):  # insert new code
+    elif command.startswith( '/ins' ) or command.startswith( '/insert' ):  # insert new code
         if is_admin:  # check if admin
             args = command.split( '  ' )
             if len( args ) == 4:
