@@ -58,16 +58,16 @@ Questo bot permette di memorizzare i codici amico del gruppo.
         
 COMANDI:
 Inserire nuovi codici (solo amministratori):
-/insert  [nome]  [etichetta]  [codice amico]
+/ins  [nome]  [etichetta]  [codice amico]
         
 Eliminare un codice (solo amministratori):
-/delete  [nome]  [etichetta]
+/del  [nome]  [etichetta]
         
 Richiamare i codici associati ad una persona:
-/query  [nome]
+/find  [nome]
         
 Vedere tutti i codici del gruppo:
-/listall
+/list
         
 Nota: tutti i parametri dei comandi vanno separati con due spazi
         
@@ -144,7 +144,7 @@ codice -> il codice amico da memorizzare (es. "1234-5678-9012")
                 "Questo comando può essere usato solo dagli amministratori del gruppo"
             )
 
-    elif command.startswith( '/ins' ) or command.startswith( '/insert' ):  # insert new code
+    elif command.startswith( '/add' ) or command.startswith( '/insert' ):  # insert new code
         if is_admin:  # check if admin
             args = command.split( '  ' )
             if len( args ) == 4:
